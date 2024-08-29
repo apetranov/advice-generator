@@ -34,9 +34,11 @@ export default function Home() {
   return (
     <div className="bg-gray-900 flex justify-center items-center w-screen h-screen">
       <div className="relative bg-gray-700 w-3/4 h-3/4 md:w-2/4 md:h-2/4 space-y-10 p-10 rounded-xl flex flex-col justify-center items-center ">
-        <h1 className="font-thin text-sm text-green-500">ADVICE #{adviceId}</h1>
+        <h1 className="font-thin text-sm text-green-500">
+          {advice ? `ADVICE #${adviceId}` : null}
+        </h1>
         <h1 className="md:text-3xl text-xl text-center font-semibold text-white">
-          "{advice || "Loading..."}"
+          {advice ? `"${advice}"` : "Loading..."}
         </h1>
         <img
           className="hidden md:flex"
